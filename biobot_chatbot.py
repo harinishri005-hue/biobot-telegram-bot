@@ -28,6 +28,7 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 # SECTION 2 — GEMINI SETUP
 # =====================================================
 
+
 genai.configure(api_key=GEMINI_API_KEY)
 
 model = genai.GenerativeModel(
