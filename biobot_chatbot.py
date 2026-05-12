@@ -22,8 +22,8 @@ from telegram.ext import (
 # =====================================================
 
 import os
-TELEGRAM_BOT_TOKEN = os.environ.get("8780870820:AAE3lT6HcunN55_0D397qQq82JxTx4VpyAA")
-GEMINI_API_KEY = os.environ.get("AIzaSyAu8mDZ5GZFqDjyVvAo_gJaKr0n7tnPEYw")
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN")
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 # =====================================================
 # SECTION 2 — GEMINI SETUP
 # =====================================================
