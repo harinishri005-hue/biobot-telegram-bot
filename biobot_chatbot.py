@@ -52,7 +52,7 @@ if not GEMINI_API_KEY:
 # Do NOT call any model here at top level — only inside functions
 # =====================================================
 client = genai.Client(api_key=GEMINI_API_KEY)
-GEMINI_MODEL = "gemini-1.5-flash"  # Correct model name — do not change
+GEMINI_MODEL = "gemini-2.0-flash-lite"  # Correct model name — do not change
  
 # =====================================================
 # SYSTEM PROMPT
