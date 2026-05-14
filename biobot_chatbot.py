@@ -222,6 +222,9 @@ async def error_handler(update, context):
 # MAIN
 # =====================================================
 def main():
+    """Start the Bot"""
+    app = applicationBuilder().token("8780870820:AAE3lT6HcunN55_0D397qQq82JxTx4VpyAA").build()
+    
     if not TELEGRAM_BOT_TOKEN:
         raise ValueError("TELEGRAM_BOT_TOKEN environment variable not set!")
     if not GEMINI_API_KEY:
@@ -231,6 +234,7 @@ def main():
     print("  Anna University, Tiruchirappalli")
     print("=" * 50)
     app = Application.builder().token(TELEGRAM_BOT_TOKEN).build()
+    
     app.add_handler(CommandHandler("start",  start_command))
     app.add_handler(CommandHandler("help",   help_command))
     app.add_handler(CommandHandler("about",  about_command))
@@ -245,5 +249,6 @@ def main():
     print("  Bot is running! Press Ctrl+C to stop.")
     print("=" * 50)
     app.run_polling(allowed_updates=Update.ALL_TYPES)
+    
 if __name__ == "__main__":
     main()
