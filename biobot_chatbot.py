@@ -9,6 +9,7 @@ from google import genai
 from google.genai import types
 from telegram import Update, BotCommand
 from telegram.ext import (Application,CommandHandler,MessageHandler,ContextTypes,filters)
+client = genai.Client()
 # =====================================================
 # CREDENTIALS — from Railway environment variables
 # =====================================================
