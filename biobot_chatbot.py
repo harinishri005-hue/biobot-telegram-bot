@@ -9,12 +9,12 @@ from google import genai
 from google.genai import types
 from telegram import Update, BotCommand
 from telegram.ext import (Application,CommandHandler,MessageHandler,ContextTypes,filters)
-client = genai.Client()
+client = genai.Client(api_key="AIzaSyAu8mDZ5GZFqDjyVvAo_gJaKr0n7tnPEYw")
 # =====================================================
 # CREDENTIALS — from Railway environment variables
 # =====================================================
-TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
-GEMINI_API_KEY     = os.environ.get("GEMINI_API_KEY", "")
+TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "8780870820:AAE3lT6HcunN55_0D397qQq82JxTx4VpyAA")
+GEMINI_API_KEY     = os.environ.get("GEMINI_API_KEY", "AIzaSyAu8mDZ5GZFqDjyVvAo_gJaKr0n7tnPEYw")
 # =====================================================
 # GEMINI CLIENT SETUP (new google-genai package)
 # =====================================================
