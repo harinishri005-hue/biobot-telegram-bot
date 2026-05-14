@@ -206,18 +206,14 @@ async def reset_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     uid = update.effective_user.id
     if uid in user_history:
         del user_history[uid]
-    await update.message.reply_text(
-        "🔄 Conversation reset! Ask me anything about composting! ��"
-    )
+    await update.message.reply_text( "🔄 Conversation reset! Ask me anything about composting! ��" )
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     uid   = update.effective_user.id
     text  = update.message.text.strip()
     if not text:
         return
     logger.info(f"User {uid}: {text}")
-    await context.bot.send_chat_action(
-        chat_id=update.effective_chat.id, action="typing"
-    )
+    await context.bot.send_chat_action( chat_id=update.effective_chat.id, action="typing" )
     reply = ask_gemini(uid, text)
     await update.message.reply_text(reply)
 async def error_handler(update, context):
@@ -244,9 +240,7 @@ def main():
     app.add_handler(CommandHandler("smell",  smell_command))
     app.add_handler(CommandHandler("ready",  ready_command))
     app.add_handler(CommandHandler("reset",  reset_command))
-    app.add_handler(MessageHandler(
-        filters.TEXT & ~filters.COMMAND, handle_message
-    ))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     app.add_error_handler(error_handler)
     print("  Bot is running! Press Ctrl+C to stop.")
     print("=" * 50)
