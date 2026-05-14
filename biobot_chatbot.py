@@ -121,8 +121,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/smell — Fix bad odour\n"
         "/ready — How to know compost is ready\n"
         "/reset — Clear conversation history\n\n"
-        "Or just *type any question* and Gemini AI answers! ��
-"
+        "Or just *type any question* and Gemini AI answers! ��"
     )
     await update.message.reply_text(msg, parse_mode="Markdown")
 async def about_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -200,8 +199,7 @@ async def ready_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "✅ Temperature stable at 25-35C\n"
         "✅ Gas reading below 300 ADC\n"
         "✅ Around day 45-60\n\n"
-        "All yes → pull the BioBot harvest drawer! ��
-"
+        "All yes → pull the BioBot harvest drawer! ��"
     )
     await update.message.reply_text(msg, parse_mode="Markdown")
 async def reset_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -209,8 +207,7 @@ async def reset_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if uid in user_history:
         del user_history[uid]
     await update.message.reply_text(
-        "🔄 Conversation reset! Ask me anything about composting! ��
-"
+        "🔄 Conversation reset! Ask me anything about composting! ��"
     )
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     uid   = update.effective_user.id
