@@ -82,67 +82,38 @@ def ask_gemini(user_id, question):
 def get_fallback(q):
     q = q.lower()
     if any(w in q for w in ["smell", "odour", "odor"]):
-        return 
-😷
- Bad smell means the pile is too wet or anaerobic. Drain the 
-leachate tray, add dry cocopeat and trigger a mix. BioBot MQ-135 will alert you if 
-gas spikes above 500 ADC!"
+        return "😷 Bad smell means the pile is too wet or anaerobic. Drain the leachate tray, add dry cocopeat and trigger a mix. BioBot MQ-135 will alert you if gas spikes above 500 ADC!"
     if any(w in q for w in ["ready", "harvest", "done", "finish"]):
-        return "
-🌱
- Compost is ready at day 45-60 when dark brown, crumbly and 
-smelling like forest soil. Pull the BioBot harvest drawer!"
+        return "🌱 Compost is ready at day 45-60 when dark brown, crumbly and smelling like forest soil. Pull the BioBot harvest drawer!"
+
     if any(w in q for w in ["add", "put", "throw"]):
-        return "
-✅
- Add vegetable peels, fruit waste, coffee grounds and eggshells 
-as greens. Balance with cocopeat or dry newspaper. Never add meat or dairy!"
+        return "✅ Add vegetable peels, fruit waste, coffee grounds and eggshells as greens. Balance with cocopeat or dry newspaper. Never add meat or dairy!"
     if any(w in q for w in ["biobot", "about", "project"]):
-        return "
-🌿
- BioBot is a solar-powered smart composter built by students at 
-Anna University Tiruchirappalli. It monitors temperature, humidity and gas 24/7, 
-auto-mixes every 8 hours and shows readings on Blynk app!"
-    return "
-🌿
- I am BioBot AI! Ask me about composting tips, what to add, fixing 
-smells, or how BioBot works. Type /help to see all commands!"
+        return "🌿 BioBot is a solar-powered smart composter built by students at Anna University Tiruchirappalli. It monitors temperature, humidity and gas 24/7, auto-mixes every 8 hours and shows readings on Blynk app!"
+    return "🌿 I am BioBot AI! Ask me about composting tips, what to add, fixing smells, or how BioBot works. Type /help to see all commands!"
 # =====================================================
 # COMMAND HANDLERS
 # =====================================================
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name = update.effective_user.first_name or "there"
     msg = (
-        f"
-🌿
+        f"🌿
  *Welcome to BioBot AI, {name}!*\n\n"
         "I am your smart composting assistant built by students at "
         "Anna University, Tiruchirappalli.\n\n"
         "I can help with:\n"
-        "
-🌡
- Understanding sensor readings\n"
-        "
-🌱
- What to add to your compost\n"
-        "
-💧
- Fixing moisture and smell issues\n"
-        "
-📅
- Knowing when compost is ready\n"
-        "
-🤖
- How BioBot works\n\n"
+        "🌡 Understanding sensor readings\n"
+        "🌱 What to add to your compost\n"
+        "💧 Fixing moisture and smell issues\n"
+        "📅 Knowing when compost is ready\n"
+        "🤖 How BioBot works\n\n"
         "Just type your question — I am here to help!\n"
         "Type /help to see all commands."
     )
     await update.message.reply_text(msg, parse_mode="Markdown")
 async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
-        "
-🌿
- *BioBot AI Commands*\n\n"
+        "🌿 *BioBot AI Commands*\n\n"
         "/start — Welcome message\n"
         "/help — Show this menu\n"
         "/about — About BioBot project\n"
@@ -160,68 +131,37 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(msg, parse_mode="Markdown")
 async def about_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
-        "
-🌿
- *About BioBot*\n\n"
+        "🌿 *About BioBot*\n\n"
         "Solar-powered smart composter for urban Indian households.\n\n"
-        "
-📍
- *Built at:* UCE BIT Campus, Anna University, Tiruchirappalli 
-620024\n\n"
-        "
-👥
- *Team:*\n"
+        "📍 *Built at:* UCE BIT Campus, Anna University, Tiruchirappalli 620024\n\n"
+        "👥 *Team:*\n"
         "• Shri Harini C — Team Lead and Facilitator\n"
         "• Thenmozhi R — Design and Development\n"
         "• Samyuktha MS — Analyst and Advisory\n"
         "• Dr. Umamaheshwari A — Faculty Mentor\n\n"
-        "
-⚙
- *Features:*\n"
+        "⚙ *Features:*\n"
         "• 20L capacity · 6V 5W Solar · Auto mixing\n"
         "• 3-factor monitoring · OLED display\n"
         "• Blynk IoT dashboard · Gemini AI chat\n\n"
-        "
-💰
- *Build cost:* Rs.8,500"
+        "💰 *Build cost:* Rs.8,500"
     )
     await update.message.reply_text(msg, parse_mode="Markdown")
 async def tips_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
-        "
-🌱
- *Quick Composting Tips*\n\n"
-        "
-󰍹
- Balance greens and browns in equal volumes\n"
-        "
-󰍽
- Chop waste into small pieces\n"
-        "
-󰍼
- Keep moisture like a wrung-out sponge\n"
-        "
-󰍶
- Aerate regularly — BioBot auto-mixes every 8 hours\n"
-        "
-󰍵
- Add cocopeat when it smells\n"
-        "
-󰍻
- Never add meat, dairy or oily food\n"
-        "
-󰍺
- Drain leachate tray weekly — dilute 1:10 for plants\n"
-        "
-󰍴
- Optimal temperature 40 to 65 degrees C"
+        "🌱 *Quick Composting Tips*\n\n"
+        "󰍹 Balance greens and browns in equal volumes\n"
+        "󰍽 Chop waste into small pieces\n"
+        "󰍼 Keep moisture like a wrung-out sponge\n"
+        "󰍶 Aerate regularly — BioBot auto-mixes every 8 hours\n"
+        "󰍵 Add cocopeat when it smells\n"
+        "󰍻 Never add meat, dairy or oily food\n"
+        "󰍺 Drain leachate tray weekly — dilute 1:10 for plants\n"
+        "󰍴 Optimal temperature 40 to 65 degrees C"
     )
     await update.message.reply_text(msg, parse_mode="Markdown")
 async def stages_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
-        "
-📅
- *4 Stages of Composting*\n\n"
+        "📅 *4 Stages of Composting*\n\n"
         "
 🔵
  *Stage 1 — Mesophilic (Day 0-7)*\n"
