@@ -82,7 +82,7 @@ def ask_gemini(user_id, question):
 def get_fallback(q):
     q = q.lower()
     if any(w in q for w in ["smell", "odour", "odor"]):
-        return "
+        return 
 😷
  Bad smell means the pile is too wet or anaerobic. Drain the 
 leachate tray, add dry cocopeat and trigger a mix. BioBot MQ-135 will alert you if 
