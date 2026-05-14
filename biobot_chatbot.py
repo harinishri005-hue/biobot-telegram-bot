@@ -141,7 +141,7 @@ async def ask_gemini(user_id: int, question: str) -> str:
                 model=GEMINI_MODEL,
                 config=types.GenerateContentConfig(
                     system_instruction=SYSTEM_PROMPT,
-                    max_output_tokens=350,
+                    max_output_tokens=200,
                     temperature=0.7,
                 ),
                 contents=history,
@@ -422,6 +422,24 @@ async def reset_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # MAIN MESSAGE HANDLER
 # All text messages → Gemini AI
 # =====================================================
+async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    uid  = update.effective_user.id
+    text = update.message.text.strip()
+    name = update.effective_user.first_name or "User"
+
+    if not text:
+        return
+
+    # Rate limit — prevent same user sending more than 1 message per 5 seconds
+    last_time = context.user_data.get("last_msg_time", 0)
+    current_time = asyncio.get_event_loop().time()
+    if current_time - last_time < 5:
+        await update.message.reply_text(
+            "⏳ Please wait a moment before sending another message!"
+        )
+        return
+    context.user_data["last_msg_time"] = current_time
+ 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     uid  = update.effective_user.id
     text = update.message.text.strip()
