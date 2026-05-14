@@ -11,9 +11,7 @@ from telegram import Update, BotCommand
 from telegram.ext import (Application,CommandHandler,MessageHandler,ContextTypes,filters)
 client = genai.Client(api_key="AIzaSyAu8mDZ5GZFqDjyVvAo_gJaKr0n7tnPEYw")
 
-response = client.models.generate_content(
-    model="gemini-3-flash-preview", contents="Explain how AI works in a few words"
-)
+response = client.models.generate_content( model="gemini-3-flash-preview", contents="Explain how AI works in a few words")
 print(response.text)
 # =====================================================
 # CREDENTIALS — from Railway environment variables
