@@ -256,7 +256,7 @@ def main():
     print("  BioBot Telegram AI Chatbot Starting...")
     print("  Anna University, Tiruchirappalli")
     print("=" * 50)
-    app = application.builder().token(TELEGRAM_BOT_TOKEN).build()
+    app = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN).build()
     
     app.add_handler(CommandHandler("start",  start_command))
     app.add_handler(CommandHandler("help",   help_command))
