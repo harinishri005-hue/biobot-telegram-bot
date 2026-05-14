@@ -96,8 +96,7 @@ def get_fallback(q):
 async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     name = update.effective_user.first_name or "there"
     msg = (
-        f"🌿
- *Welcome to BioBot AI, {name}!*\n\n"
+        f"🌿 *Welcome to BioBot AI, {name}!*\n\n"
         "I am your smart composting assistant built by students at "
         "Anna University, Tiruchirappalli.\n\n"
         "I can help with:\n"
