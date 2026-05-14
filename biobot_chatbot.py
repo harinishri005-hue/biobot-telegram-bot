@@ -121,9 +121,7 @@ async def help_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "/smell — Fix bad odour\n"
         "/ready — How to know compost is ready\n"
         "/reset — Clear conversation history\n\n"
-        "Or just *type any question* and Gemini AI answers! 
-�
-�
+        "Or just *type any question* and Gemini AI answers! ��
 "
     )
     await update.message.reply_text(msg, parse_mode="Markdown")
@@ -160,48 +158,30 @@ async def tips_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def stages_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
         "📅 *4 Stages of Composting*\n\n"
-        "
-🔵
- *Stage 1 — Mesophilic (Day 0-7)*\n"
+        "🔵 *Stage 1 — Mesophilic (Day 0-7)*\n"
         "Bacteria start. Pile warms to 25-40C.\n\n"
-        "
-🔴
- *Stage 2 — Thermophilic (Day 7-30)*\n"
+        "🔴 *Stage 2 — Thermophilic (Day 7-30)*\n"
         "Peak activity. Temp 40-65C. BioBot auto-mixes.\n\n"
-        "
-🟡
- *Stage 3 — Cooling (Day 30-45)*\n"
+        "🟡 *Stage 3 — Cooling (Day 30-45)*\n"
         "Pile shrinks. Fungi take over. Temp drops.\n\n"
-        "
-🟢
- *Stage 4 — Curing (Day 45-60)*\n"
+        "🟢 *Stage 4 — Curing (Day 45-60)*\n"
         "Dark brown, crumbly, earthy smell. Pull drawer!"
     )
     await update.message.reply_text(msg, parse_mode="Markdown")
 async def add_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
-        "
-♻
- *What to Add*\n\n"
-        "
-✅
- *GREENS:*\n"
+        "♻ *What to Add*\n\n"
+        "✅ *GREENS:*\n"
         "Vegetable peels, fruit waste, coffee grounds, eggshells, tea bags\n\n"
-        "
-✅
- *BROWNS:*\n"
+        "✅ *BROWNS:*\n"
         "Cocopeat, shredded newspaper, dry leaves, cardboard\n\n"
-        "
-❌
- *NEVER ADD:*\n"
+        "❌ *NEVER ADD:*\n"
         "Meat, fish, dairy, oily food, cooked rice, pet waste"
     )
     await update.message.reply_text(msg, parse_mode="Markdown")
 async def smell_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
-        "
-😷
- *Fix Bad Odour*\n\n"
+        "😷 *Fix Bad Odour*\n\n"
         "1. Check if gas reading is above 500 ADC\n"
         "2. Drain the leachate slide-out tray\n"
         "3. Add dry cocopeat or shredded paper on top\n"
@@ -213,30 +193,14 @@ async def smell_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(msg, parse_mode="Markdown")
 async def ready_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     msg = (
-        "
-🌱
- *How to Know Compost is Ready*\n\n"
-        "
-✅
- Dark brown to black colour\n"
-        "
-✅
- Crumbly and loose texture\n"
-        "
-✅
- Earthy forest soil smell\n"
-        "
-✅
- Temperature stable at 25-35C\n"
-        "
-✅
- Gas reading below 300 ADC\n"
-        "
-✅
- Around day 45-60\n\n"
-        "All yes → pull the BioBot harvest drawer! 
-�
-�
+        "🌱 *How to Know Compost is Ready*\n\n"
+        "✅ Dark brown to black colour\n"
+        "✅ Crumbly and loose texture\n"
+        "✅ Earthy forest soil smell\n"
+        "✅ Temperature stable at 25-35C\n"
+        "✅ Gas reading below 300 ADC\n"
+        "✅ Around day 45-60\n\n"
+        "All yes → pull the BioBot harvest drawer! ��
 "
     )
     await update.message.reply_text(msg, parse_mode="Markdown")
@@ -245,11 +209,7 @@ async def reset_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if uid in user_history:
         del user_history[uid]
     await update.message.reply_text(
-        "
-🔄
- Conversation reset! Ask me anything about composting! 
-�
-�
+        "🔄 Conversation reset! Ask me anything about composting! ��
 "
     )
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
