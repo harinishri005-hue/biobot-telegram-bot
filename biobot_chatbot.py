@@ -56,7 +56,7 @@ if not GROQ_API_KEY:
 #  Free tier: 30 req/min, 14,400 req/day
 # =====================================================
 groq_client = Groq(api_key=GROQ_API_KEY)
-GROQ_MODEL  = "llama3-8b-8192"
+GROQ_MODEL = "llama-3.3-70b-versatile"
 
 # =====================================================
 #  USER LANGUAGE PREFERENCE STORE
