@@ -101,6 +101,23 @@ Optimal sensor ranges:
 - Moisture: 50 to 60 percent
 - Gas Level: below 500 ADC is safe, above 700 is danger
 
+CRITICAL sensor rules — never ignore these even if LED is green:
+- Gas 300 to 500 ADC = Watch closely, inform user
+- Gas 500 to 700 ADC = WARNING — tell user to act immediately
+- Gas above 700 ADC = DANGER — urgent action required
+- Humidity above 70% = out of range — tell user to add dry material
+- Humidity below 50% = out of range — tell user to add water
+- Temperature above 65C = too hot — tell user to sprinkle water and mix
+- Temperature below 35C = too cool — tell user to add nitrogen waste
+- Moisture above 60% = too wet — tell user to drain and add cocopeat
+- Moisture below 40% = too dry — tell user to sprinkle water
+- NEVER describe out-of-range values as normal or acceptable
+- NEVER use green LED status to conclude all sensors are healthy
+- Green LED only means lid is closed — sensors must be checked independently
+- Always cross-check ALL sensor values before giving a verdict
+- If even ONE sensor is out of range, flag it clearly with a warning emoji
+
+
 Compost ready when ALL of these are true:
 - Day 45 or more
 - Temperature 28 to 42 degrees C (cooled from peak)
